@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | My Website</title>
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Contact.html" class="active">Contact</a>
+</nav>
+
+<section class="scroll-section">
+    <h1>Contact Me</h1>
+    <p>Have questions or want to collaborate? Reach out via email or social media.</p>
+    <button class="btn" onclick="window.location.href='mailto:Sagongoemmanuel058@gmail.com'">Email Me</button>
+</section>
+
+<section class="scroll-section">
+    <h2>Follow Me</h2>
+    <p>Connect on social media for updates and projects.</p>
+    <p>
+        <a class="btn" href="https://twitter.com/" target="_blank">Twitter</a>
+        <a class="btn" href="https://github.com/" target="_blank">GitHub</a>
+    </p>
+</section>
+
+<footer>
+    <p>&copy; 2026 My Website. All rights reserved.</p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll('.scroll-section');
+function revealSections() {
+    const triggerBottom = window.innerHeight * 0.85;
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < triggerBottom) section.classList.add('visible');
+    });
+}
+window.addEventListener('scroll', revealSections);
+window.addEventListener('load', revealSections);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | My Website</title>
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="About.html">About</a>
+    <a href="Contact.html">Contact</a>
+</nav>
+
+<section class="scroll-section">
+    <h1>Welcome to My Website</h1>
+    <p>Explore my projects, learn more about me, and feel free to get in touch!</p>
+    <button class="btn" onclick="window.location.href='About.html'">Learn More</button>
+</section>
+<section class="scroll-section">
+    <h2>Highlights</h2>
+    <p>Life is like a bicycle, you need to balance so you can move.Learning is a process, if you are interested in technology contact me so we can share .Thank you dear let abide to AI.</p>
+    <img src="Son.jpg" alt="Son.jpg">
+</section>
+
+<footer>
+    <p>&copy; 2026 My Website. All rights reserved.</p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll('.scroll-section');
+function revealSections() {
+    const triggerBottom = window.innerHeight * 0.85;
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if(sectionTop < triggerBottom) section.classList.add('visible');
+    });
+}
+window.addEventListener('scroll', revealSections);
+window.addEventListener('load', revealSections);
+</script>
+
+</body>
+</html>
